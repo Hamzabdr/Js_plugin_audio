@@ -2,6 +2,50 @@
   text-align: center;
 }
 
+.back {    
+  background: url('https://www.moddevices.com/hubfs/assets/billboards/home-billboard.jpg');
+}
+h1 {
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-style: bold;
+}
+.name {
+  font-family: Georgia;
+  font-size: 150%;
+}
+p{
+  color: blanchedalmond;
+
+}
+.body {
+  padding-left: 12.5%;
+  padding-right: 12.5%
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+#wrapper :hover{background-color: #282c34}
+.wrapper {
+    text-align: center;
+    display: inline-block;
+    border-style: solid;
+    border-radius: 2%;
+    border-color: black;
+    width: 25%;
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 60px;
+    margin-right: 60px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    
+  }
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
