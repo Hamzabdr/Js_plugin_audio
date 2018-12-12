@@ -86,7 +86,7 @@ app.get('/api/plugins', function(req, res) {
 	// Si présent on prend la valeur du param, sinon 1
     let page = parseInt(req.query.page || 1);
     // idem si present on prend la valeur, sinon 10
-    let pagesize = parseInt(req.query.pagesize || 100);
+    let pagesize = parseInt(req.query.pagesize || 80);
 
  	mongoDBModule.findplugins(page, pagesize, function(data) {
  		var objdData = {
