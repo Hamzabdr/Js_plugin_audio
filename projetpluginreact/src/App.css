@@ -24,7 +24,7 @@ p{
   padding-left: 12.5%;
   padding-right: 12.5%;
 }
-a:hover { 
+a .wrapper:hover { 
   background-color: transparent;
 }
 img {
@@ -32,6 +32,11 @@ img {
   height: auto;
   transform: scale(0.7);
 }
+.form-control {
+  font-size: 2rem;
+  padding: 25px 15px;
+}
+
 .wrapper {
   background-color: cornsilk;
     text-align: center;
@@ -49,15 +54,17 @@ img {
   }
   .details {
     text-align: center;
+    border-style: solid;
+    border-color:rgb(151, 73, 0);
+    background-color: rgb(204, 139, 0);
     font-size: 20px;
-    font-display: initial;
     display: block;
-    max-width: 100%;
+    width: 50%;
     height: auto;
     margin-top: 20px;
     margin-bottom: 20px;
-    margin-left: 60px;
-    margin-right: 60px;
+    margin-left: 25%;
+    margin-right: 20%;
     padding: 20px;
   }
 

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { Link } from "react-router-dom";
 import Details from './Details';
+import Pagination from "react-js-pagination";
 
 
 class Gallery extends Component {
@@ -10,6 +11,7 @@ class Gallery extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      activePage : 1,
       plugins: [],
     };
   }
@@ -19,7 +21,7 @@ class Gallery extends Component {
     this.getDataFromServer();
   }
   getDataFromServer() {
-    fetch('http://localhost:8080/api/plugins')
+    fetch('http://localhost:8080/api/plugins?page=1')
       .then(response => {
         return response.json() // transforme le json texte en objet js
       })
@@ -60,9 +62,10 @@ class Gallery extends Component {
         <div className="body" style={{ padding: 24, minHeight: 800 }}>
 
           <h1> Plugins gallery</h1>
+
           {this.state.plugins.map((plugin, index) => {
                 if (plugin.screenshot_href != null){
-            return (
+                  return (
               <a key={index} className="wrapper">
                 <p className="name">{plugin.name}</p>
                 <p><img alt="No Image" className="img-fluid" src={plugin.screenshot_href} /></p>
@@ -72,14 +75,22 @@ class Gallery extends Component {
                 <p><button type="button" className="btn btn-outline-primary">Details</button></p>
                 </Link>
                 </a>
-              
+
             );
                 }
           })
         
           }
         </div>
+        <p className="Page"><Pagination
+                    prevPageText={<i className='glyphicon glyphicon-menu-left'/>}
+                    nextPageText={<i className='glyphicon glyphicon-menu-right'/>}
+                    activePage={this.state.activePage}
+                    onChange={this.handlePageChange}
+                  />
+                  </p>
       </div>
+
     )
   }
 
