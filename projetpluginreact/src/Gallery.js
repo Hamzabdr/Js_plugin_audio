@@ -62,7 +62,14 @@ class Gallery extends Component {
         <div className="body" style={{ padding: 24, minHeight: 800 }}>
 
           <h1> Plugins gallery</h1>
-
+          <br/>
+          <div>
+        <form>
+        <fieldset className="form-group" align = "center" >
+        <input type="text" className="form-control-lg" placeholder="Search" onChange={this.filterList}/>
+        </fieldset>
+        </form>
+        </div>
           {this.state.plugins.map((plugin, index) => {
                 if (plugin.screenshot_href != null){
                   return (
