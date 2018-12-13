@@ -52,25 +52,27 @@ class Gallery extends Component {
     }; */
   render() {
     //let plugins = null;
+    
+
     return (
       //<div style={{ background : "https://www.moddevices.com/hubfs/assets/billboards/home-billboard.jpg" }}>
-      <div class="back">
-        <div class="body" style={{ background: "#696969", padding: 24, minHeight: 800 }}>
+      <div className="back">
+        <div className="body" style={{ padding: 24, minHeight: 800 }}>
 
           <h1> Plugins gallery</h1>
           {this.state.plugins.map((plugin, index) => {
                 if (plugin.screenshot_href != null){
             return (
-              <div key={index} class="wrapper">
-                <p class="name"> <bold>{plugin.name}</bold></p>
-                <p><img alt="No Image" src={plugin.screenshot_href} /></p>
+              <a key={index} className="wrapper">
+                <p className="name">{plugin.name}</p>
+                <p><img alt="No Image" className="img-fluid" src={plugin.screenshot_href} /></p>
                 <p> Categorie : {plugin.category} </p>
                 <p>{plugin.brand}</p>
-                <Link to={"/Details?id="+plugin.id} render={(props) => <Details {...props} />}>
-                <p><button type="button" class="btn btn-outline-primary">Details</button></p>
+                <Link to={"/details?id="+plugin.id} key={plugin.id} render={(props) => <Details {...props} />}>
+                <p><button type="button" className="btn btn-outline-primary">Details</button></p>
                 </Link>
-                
-              </div>
+                </a>
+              
             );
                 }
           })

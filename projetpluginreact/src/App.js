@@ -19,9 +19,7 @@ class App extends Component {
         <Router>
           <div>
             <Route exact path="/" component={Gallery} />
-            <Route path="/Details" render={(props) => <Details {...props} />}/> 
-
-            {/* <Route path="/details" component={Details} /> */}
+            <Route path="/details" component={Details} />
           </div>
         </Router>
       </div>
